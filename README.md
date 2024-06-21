@@ -4,6 +4,8 @@
 
 ## Come see Bifler
 
+## Play Bifler - Game of Bones - _TIMELINE_
+
 <!--
 **Bifler/bifler** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
