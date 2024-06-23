@@ -1,0 +1,79 @@
+body {
+	height: 100vh;
+	margin: 0;
+	display: grid;
+	place-items: center;
+	background: rgb(255, 255, 255);
+	background: radial-gradient(
+		circle,
+		rgba(255, 255, 255, 0.8169642857142857) 0%,
+		rgba(19, 35, 112, 1) 100%
+	);
+}
+
+.fistbump {
+	font-size: 5rem;
+	margin: auto;
+}
+
+.right-fist {
+	animation-duration: 2s;
+	animation-iteration-count: 40;
+	animation-name: right-bump;
+	animation-timing-function: ease;
+	display: inline-block;
+}
+.left-fist {
+	rotate: -35deg;
+	animation-duration: 2s;
+	animation-iteration-count: 40;
+	animation-name: left-bump;
+	animation-timing-function: ease;
+	display: inline-block;
+}
+.cucumber-jab {
+	rotate: 30deg;
+	animation-duration: 2s;
+	animation-iteration-count: 40;
+	animation-name: left-bump;
+	animation-timing-function: ease;
+	display: inline-block;
+}
+@keyframes right-bump {
+	0% {
+		transform: translateX(0);
+	}
+	10% {
+		transform: translateX(75px);
+	}
+	25% {
+		transform: translateX(-40px);
+	}
+	50% {
+		transform: translateX(100px);
+	}
+	75% {
+		rotate: 360deg;
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes left-bump {
+	0% {
+		transform: translateX(0);
+	}
+	10% {
+		transform: translateX(-75px);
+	}
+	25% {
+		transform: translateX(40px);
+	}
+	50% {
+		transform: translateX(-100px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
