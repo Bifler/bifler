@@ -1,0 +1,14 @@
+{% extends "_base.njk" %}
+
+{% block content %}
+<div class="container my-5 p-5 text-center bg-body-tertiary shadow rounded-3">
+    <h1>Bifler's Gigs 🎷</h1>
+
+    <ul>
+    {% for gig in collections.gigs %}
+    <li class="shadow "><a href="{{ gig.url }}">{{ gig.data.title }}</a><p>{{ gig.date.toLocaleDateString() }}</p></li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

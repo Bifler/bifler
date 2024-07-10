@@ -1,0 +1,47 @@
+{% extends "_base.njk"%}
+
+{% block content %}
+<div class="container m-2 p-2 text-center bg-body-tertiary shadow rounded-3">
+
+  <title>{{ title }}</title>
+  <!-- Grab the content from the page data, dump it here, and mark it as safe -->
+  <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
+  {{ content | safe }}
+
+  {% set currentGig = page.url %}
+  {% set gigs = collections.gigs %}
+  
+  {% set previousGig = null %}
+  {% set nextGig = null %}
+  
+  {% for gig in gigs %}
+    {% if gig.url == currentGig %}
+      {% set currentIndex = loop.index0 %}
+    {% endif %}
+  {% endfor %}
+  
+  {% if currentIndex > 0 %}
+    {% set previousGig = gigs[currentIndex - 1] %}
+  {% endif %}
+  
+  {% if currentIndex < gigs.length - 1 %}
+    {% set nextGig = gigs[currentIndex + 1] %}
+  {% endif %}
+  
+  <div class="navigation">
+    {% if previousGig %}
+      <a href="{{ previousGig.url }}" class="btn btn-primary">Previous Gig</a>
+    {% endif %}
+    {% if nextGig %}
+      <a href="{{ nextGig.url }}" class="btn btn-primary">Next Gig</a>
+    {% endif %}
+  </div>
+
+</div>
+<div class="container m-2 p-2 text-center bg-body-tertiary shadow rounded-3">
+  <div class="card">
+    {% include "components/nav-buttons.html" %}
+  </div>
+</div>
+
+{% endblock %}
