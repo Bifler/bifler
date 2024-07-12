@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/js/color-modes.js");
     eleventyConfig.addPassthroughCopy("src/vidz/bifler (3).webm");
     eleventyConfig.addPassthroughCopy("src/img/bifler (3).png");
+    eleventyConfig.addPassthroughCopy("src/songs/twistnpull.mp3");
     //sort gigs by date
     eleventyConfig.addCollection("gigs", function(collectionApi) {
         return collectionApi.getFilteredByGlob("./src/gigs/*.md").sort((a, b) => {
