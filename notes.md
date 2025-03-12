@@ -1,4 +1,7 @@
-
+# remember to build
+```
+npx eleventy
+```
 
 
 ### create npm for eleventy and bootstrap css only
